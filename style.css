@@ -1,0 +1,91 @@
+/* Thiết lập font chữ toàn trang web */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Thiết lập màu nền cho tiêu đề */
+h1 {
+  background-color: #ECECEC;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Thiết lập màu nền và đường viền cho game-board */
+.game-board {
+  margin-left: 20%;
+  margin-right: 20%;
+
+  background-color: #F8F8F8;
+  border: 2px solid #CCC;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Thiết lập màu nền và đường viền cho phần đặt cược */
+.betting-section {
+  background-color: #FFF;
+  border: 2px solid #CCC;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Thiết lập kiểu chữ cho tiêu đề đặt cược */
+.betting-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+/* Thiết lập màu nền cho nút chọn chẵn */
+.button-even {
+  background-color: #4CAF50;
+  color: #FFF;
+}
+
+/* Thiết lập màu nền cho nút chọn lẻ */
+.button-odd {
+  background-color: #2196F3;
+  color: #FFF;
+}
+
+/* Thiết lập đường viền cho nút chơi lại */
+.button-play-again {
+  border: 1px solid #CCC;
+  background-color: #FFF;
+  color: #666;
+}
+
+/* Thiết lập đường viền và màu nền cho phần kết quả */
+.result-section {
+  background-color: #ECECEC;
+  border: 2px solid #CCC;
+  padding: 20px;
+}
+
+/* Thiết lập kiểu chữ cho tiêu đề kết quả */
+.result-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+}
+/* hiển thị đúng trên màn hình điện thoại */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .betting-section {
+    width: 100%;
+    text-align: center;
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .button-group button {
+    margin: 5px;
+  }
+}
+
