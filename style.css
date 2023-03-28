@@ -2,6 +2,10 @@
 body {
   font-family: Arial, sans-serif;
 }
+header img{
+  width: 100%;
+  height: 300px;
+}
 
 /* Thiết lập màu nền cho tiêu đề */
 h1 {
@@ -9,13 +13,13 @@ h1 {
   padding: 20px;
   text-align: center;
 }
-
+.container{
+  background-color: red;
+}
 /* Thiết lập màu nền và đường viền cho game-board */
 .game-board {
   margin-left: 20%;
   margin-right: 20%;
-
-  background-color: #F8F8F8;
   border: 2px solid #CCC;
   padding: 20px;
   margin-top: 20px;
@@ -52,7 +56,7 @@ h1 {
 .button-play-again {
   border: 1px solid #CCC;
   background-color: #FFF;
-  color: #666;
+  color: #090101;
 }
 
 /* Thiết lập đường viền và màu nền cho phần kết quả */
@@ -68,24 +72,25 @@ h1 {
   font-weight: bold;
   margin-top: 0;
 }
-/* hiển thị đúng trên màn hình điện thoại */
-@media only screen and (max-width: 768px) {
+/* Hiển thị đúng trên máy tính bảng */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
-    width: 100%;
-    padding: 0 10px;
+  width: 100%;
+  padding: 0 20px;
   }
   .betting-section {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
   }
   .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   }
   .button-group button {
-    margin: 5px;
+  margin: 5px;
   }
-}
-
+  }
+  
+ 
