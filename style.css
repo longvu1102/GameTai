@@ -1,96 +1,169 @@
-/* Thiết lập font chữ toàn trang web */
 body {
-  font-family: Arial, sans-serif;
-}
-header img{
-  width: 100%;
-  height: 300px;
-}
-
-/* Thiết lập màu nền cho tiêu đề */
-h1 {
-  background-color: #ECECEC;
-  padding: 20px;
-  text-align: center;
-}
-.container{
-  background-color: red;
-}
-/* Thiết lập màu nền và đường viền cho game-board */
-.game-board {
-  margin-left: 20%;
-  margin-right: 20%;
-  border: 2px solid #CCC;
-  padding: 20px;
-  margin-top: 20px;
+  background-image: url(img/cach-danh-tai-xiu.jpg);
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: change-colors 10s infinite;
 }
 
-/* Thiết lập màu nền và đường viền cho phần đặt cược */
-.betting-section {
-  background-color: #FFF;
-  border: 2px solid #CCC;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/* Thiết lập kiểu chữ cho tiêu đề đặt cược */
-.betting-section h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 0;
-}
-
-/* Thiết lập màu nền cho nút chọn chẵn */
-.button-even {
-  background-color: #4CAF50;
-  color: #FFF;
-}
-
-/* Thiết lập màu nền cho nút chọn lẻ */
-.button-odd {
-  background-color: #2196F3;
-  color: #FFF;
-}
-
-/* Thiết lập đường viền cho nút chơi lại */
-.button-play-again {
-  border: 1px solid #CCC;
-  background-color: #FFF;
-  color: #090101;
-}
-
-/* Thiết lập đường viền và màu nền cho phần kết quả */
-.result-section {
-  background-color: #ECECEC;
-  border: 2px solid #CCC;
-  padding: 20px;
-}
-
-/* Thiết lập kiểu chữ cho tiêu đề kết quả */
-.result-section h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 0;
-}
-/* Hiển thị đúng trên máy tính bảng */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .container {
-  width: 100%;
-  padding: 0 20px;
+@keyframes change-colors {
+  0% {
+    filter: hue-rotate(0deg);
   }
-  .betting-section {
-  width: 100%;
-  text-align: center;
+  100% {
+    filter: hue-rotate(360deg);
   }
-  .button-group {
+}
+
+body::before {
+  content: '';
+  background: url(img/cach-danh-tai-xiu.jpg);
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(0px);
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+.blur {
+  filter: blur(5px);
+  transition: filter 0.5s ease-in-out;
+}
+
+
+/* Style the header */
+header {
+  background-color: rgb(10, 1, 1);
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+header img {
+  height: 100px;
+  margin-right: 20px;
+}
+
+header marquee {
+  color: #eee6e6;
+  font-size: 18px;
+}
+.container h1{
+  font-size: 50px;
+  text-align: center;
+  background: linear-gradient(to right, red, rgb(234, 18, 191), rgb(62, 16, 227), rgb(41, 10, 167), rgb(214, 214, 219), rgb(60, 3, 101), rgb(248, 6, 248));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hue 5s infinite;
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
   }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+/* Style the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the game board */
+.game-board {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.betting-section {
+  flex-basis: 45%;
+}
+
+.result-section {
+  flex-basis: 45%;
+  text-align: center;
+}
+
+/* Style the bet section */
+.betting-section h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.betting-section input[type="number"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-odd,
+.button-even,
+.button-play-again {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #202020;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button-odd:hover,
+.button-even:hover,
+.button-play-again:hover {
+  background-color: #fff;
+  color: #202020;
+}
+
+/* Style the result section */
+.result-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #180303;
+}
+
+.result-section p {
+  font-size: 60px;
+  color: #0f0404;
+  font-weight: bold;
+}
+
+/* Hiển thị đúng trên máy tính bảng */
+@media only screen and (min-width:) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  .betting-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   .button-group button {
-  margin: 5px;
+    margin: 5px;
   }
-  }
-  
- 
+}
